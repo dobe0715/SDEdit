@@ -65,7 +65,7 @@ class Diffusion:
         alphas = 1.0 - betas
         alphas_cumprod = np.cumprod(alphas, axis=0)
         alphas_cumprod_prev = np.append(1.0, alphas_cumprod[:-1])
-        posterior_variance = betas *             (1.0 - alphas_cumprod_prev) / (1.0 - alphas_cumprod)
+        posterior_variance = betas * (1.0 - alphas_cumprod_prev) / (1.0 - alphas_cumprod)
         if self.model_var_type == "fixedlarge":
             self.logvar = np.log(np.append(posterior_variance[1], betas[1:]))
 
