@@ -75,8 +75,8 @@ class Diffusion:
     def image_editing_sample(self):
         print("Loading model")
 
-        url = "./models/celeba_hq.ckpt"
-        ckpt = torch.load(url, map_location=self.device)
+        url = "https://sdediffusion.s3.ap-southeast-2.amazonaws.com/celeba_hq.ckpt"
+        ckpt = torch.hub.load_state_dict_from_url(url, map_location=self.device)
         config = "celeba.yml"
         
         model = Model(self.config)
