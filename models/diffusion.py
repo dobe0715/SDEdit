@@ -4,13 +4,7 @@ import torch.nn as nn
 
 
 def get_timestep_embedding(timesteps, embedding_dim):
-    """
-    This matches the implementation in Denoising Diffusion Probabilistic Models:
-    From Fairseq.
-    Build sinusoidal embeddings.
-    This matches the implementation in tensor2tensor, but differs slightly
-    from the description in Section 3.5 of "Attention Is All You Need".
-    """
+    
     assert len(timesteps.shape) == 1
 
     half_dim = embedding_dim // 2
